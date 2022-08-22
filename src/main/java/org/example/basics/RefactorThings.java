@@ -1,4 +1,4 @@
-package org.example;
+package org.example.basics;
 
 import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
