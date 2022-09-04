@@ -1,4 +1,4 @@
-package org.example.intermidiate;
+package intermidiate;
 
 import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
