@@ -9,9 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Wait {
-    public static void untilJqueryIsDone(WebDriver driver){
-        untilJqueryIsDone(driver, FileReaderManager.getInstance().getConfigReader().getImplicitlyWait());
-    }
 
     public static void untilJqueryIsDone(WebDriver driver, Long timeoutInSeconds){
         until(driver, (d) -> {
@@ -21,9 +18,6 @@ public class Wait {
         }, timeoutInSeconds);
     }
 
-    public static void untilPageLoadComplete(WebDriver driver) {
-        untilPageLoadComplete(driver, FileReaderManager.getInstance().getConfigReader().getImplicitlyWait());
-    }
 
     public static void untilPageLoadComplete(WebDriver driver, Long timeoutInSeconds){
         until(driver, (d) ->
@@ -35,9 +29,6 @@ public class Wait {
     }
 
 
-    public static void until(WebDriver driver, Function<WebDriver, Boolean> waitCondition){
-        until(driver, waitCondition, FileReaderManager.getInstance().getConfigReader().getImplicitlyWait());
-    }
 
 
     private static void until(WebDriver driver, Function<WebDriver, Boolean> waitCondition, Long timeoutInSeconds){
