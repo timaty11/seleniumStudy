@@ -23,10 +23,9 @@ public class TableThings2 {
         String sRowValue = "Clock Tower Hotel";
 
         // First loop will find the 'ClOCK TWER HOTEL' in the first column
-        for (int i=1;i<=5;i++){
-            String sValue = null;
-            sValue = driver.findElement(By.xpath(".//*[@id='content']/table/tbody/tr[" + i + "]/th")).getText();
-            if(sValue.equalsIgnoreCase(sRowValue)){
+        for (int i = 1; i <= 5; i++){
+            String sValue = driver.findElement(By.xpath(".//*[@id='content']/table/tbody/tr[" + i + "]/th")).getText();
+            if (sValue.equalsIgnoreCase(sRowValue)){
                 // If the sValue match with the description, it will initiate one more inner loop for all the columns of 'i' row
                 for (int j=1;j<=5;j++){
                     String sColumnValue= driver.findElement(By.xpath(".//*[@id='content']/table/tbody/tr[" + i + "]/td["+ j +"]")).getText();

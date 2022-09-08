@@ -23,7 +23,7 @@ public class Checkboxes {
         boolean isSelected = checkBoxSelected.isSelected();
 
         // Performing click operation if element is not selected
-        if(isSelected == false) {
+        if(isSelected) {
             checkBoxSelected.click();
         }
 
@@ -34,7 +34,7 @@ public class Checkboxes {
         boolean isDisplayed = checkBoxDisplayed.isDisplayed();
 
         // Performing click operation if element is displayed
-        if (isDisplayed == true) {
+        if (isDisplayed) {
             checkBoxDisplayed.click();
         }
 
@@ -45,7 +45,7 @@ public class Checkboxes {
         boolean isEnabled = checkBoxEnabled.isEnabled();
 
         // Performing click operation if element is enabled
-        if (isEnabled == true) {
+        if (isEnabled) {
             checkBoxEnabled.click();
         }
 

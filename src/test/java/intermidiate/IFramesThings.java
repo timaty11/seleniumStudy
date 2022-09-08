@@ -16,6 +16,13 @@ public class IFramesThings {
         switchById();
         switchByWebElement();
         switchBackToMainPage();
+        switchToIFrameByIndex();
+        switchToIFrameByName();
+        switchToIFrameByWebElement();
+        switchToChildIFrame();
+        switchBackToParentFrame();
+        switchBackToMainWebPage();
+
         
     }
 
@@ -29,7 +36,7 @@ public class IFramesThings {
 
         // By executing a java script
         JavascriptExecutor exe = (JavascriptExecutor) driver;
-        Integer numberOfFrames = Integer.parseInt(exe.executeScript("return window.length").toString());
+        int numberOfFrames = Integer.parseInt(exe.executeScript("return window.length").toString());
         System.out.println("Number of iframes on the page are " + numberOfFrames);
 
         // By finding all the web elements using iframe tag
@@ -103,7 +110,7 @@ public class IFramesThings {
         driver.get(url);
 
         // First find the element using any of locator strategy
-        WebElement iframeElement = driver.findElement(By.id("IF1"));
+        // WebElement iframeElement = driver.findElement(By.id("IF1"));
 
         // now use the switch command
         driver.switchTo().frame(0);
@@ -296,7 +303,7 @@ public class IFramesThings {
         driver.switchTo().frame(0);
         WebElement frame2Element = driver.findElement(By.tagName("p"));
         String frame2Text = frame2Element.getText();
-        System.out.println("Frame2 is :"+frame1Text);
+        System.out.println("Frame2 is :" + frame2Text);
 
         // Try to print the heading of the main page without switching
         WebElement mainPageText = driver.findElement(By.xpath("//*[@id=\"framesWrapper\"]/div[1]/text()"));

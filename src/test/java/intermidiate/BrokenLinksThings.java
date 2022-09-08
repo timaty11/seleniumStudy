@@ -32,8 +32,8 @@ public class BrokenLinksThings {
         System.out.println("Found " + urls.size() + " amount of URLs on the page");
 
         // Iterate through all the URLs
-        for (int i = 0; i < urls.size(); i++) {
-            url = urls.get(i).getAttribute("href");
+        for (WebElement webElement : urls) {
+            url = webElement.getAttribute("href");
             System.out.print(url);
 
             // Check if url is valid
@@ -61,8 +61,7 @@ public class BrokenLinksThings {
         System.out.println("Found " + imgList.size() + " amount of URLs on the page");
 
         // Iterate through all images
-        for (int i = 0; i < imgList.size(); i++) {
-            WebElement image = imgList.get(i);
+        for (WebElement image : imgList) {
             System.out.print(image.getAttribute("src"));
 
             // Check if url is valid
@@ -74,7 +73,7 @@ public class BrokenLinksThings {
 
             //Validate image display using JavaScript executor
             try {
-                boolean imageDisplayed = (Boolean) ((JavascriptExecutor) driver).executeScript("return (typeof arguments[0].naturalWidth !=\"undefined\" && arguments[0].naturalWidth > 0);", image);
+                boolean imageDisplayed = (Boolean) ((JavascriptExecutor) driver).executeScript("return (typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0);", image);
 
                 if (imageDisplayed) {
                     System.out.println(" DISPLAY - OK");
@@ -99,11 +98,7 @@ public class BrokenLinksThings {
             httpURLConnection.setConnectTimeout(5000);
             httpURLConnection.connect();
 
-            if (httpURLConnection.getResponseCode() >= 400) {
-                return false;
-            } else {
-                return true;
-            }
+            return httpURLConnection.getResponseCode() < 400;
 
         } catch (Exception e) {
             return false;

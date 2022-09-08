@@ -19,7 +19,7 @@ public class RobotClassThings {
 
 
     //// NOT WORKING
-    public static void keyboardTest() throws AWTException, InterruptedException {
+    public static void keyboardTest() throws AWTException {
         String url = "https://demoqa.com/automation-practice-form";
 
         WebDriver driver = new ChromeDriver();

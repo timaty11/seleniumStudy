@@ -19,7 +19,7 @@ public class DragAndDropThings {
 
 
     public static void dragAndDropTest() {
-        String url = "http://demoqa.com/droppable/";
+        String url = "https://demoqa.com/droppable/";
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -38,7 +38,7 @@ public class DragAndDropThings {
 
 
     public static void dragAndDropByTest() {
-        String url = "http://demoqa.com/droppable/";
+        String url = "https://demoqa.com/droppable/";
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();

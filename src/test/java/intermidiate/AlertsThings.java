@@ -12,7 +12,8 @@ public class AlertsThings {
         simpleAlertHandle();
         promptAlertHandle();
         confirmationAlertHandle();
-
+        unexpectedAlertHandle();
+        
     }
 
 

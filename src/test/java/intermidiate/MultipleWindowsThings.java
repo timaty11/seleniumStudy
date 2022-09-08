@@ -11,9 +11,9 @@ import java.util.Set;
 public class MultipleWindowsThings {
 
     public static void main(String[] args) {
-//        findChildWindow();
-//        handleMultipleWindows();
-//        switchBetweenChildAndParent();
+        findChildWindow();
+        handleMultipleWindows();
+        switchBetweenChildAndParent();
 
         practiceWindowExercise();
 
@@ -32,11 +32,9 @@ public class MultipleWindowsThings {
         // Get handles of the windows
         String mainWindowHandle = driver.getWindowHandle();
         Set<String> allWindowHandles = driver.getWindowHandles();
-        Iterator<String> iterator = allWindowHandles.iterator();
 
         // Here we will check if child window has other child windows and will fetch the heading of the child window
-        while (iterator.hasNext()) {
-            String ChildWindow = iterator.next();
+        for (String ChildWindow : allWindowHandles) {
             if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
                 driver.switchTo().window(ChildWindow);
                 WebElement text = driver.findElement(By.id("sampleHeading"));
@@ -65,12 +63,10 @@ public class MultipleWindowsThings {
         // To handle all new opened window
         Set<String> s1 = driver.getWindowHandles();
         System.out.println("Child window handle is" + s1);
-        Iterator<String> i1 = s1.iterator();
 
         // Here we will check if child window has other child windows and when child window
         // is the main window it will come out of loop.
-        while (i1.hasNext()) {
-            String ChildWindow = i1.next();
+        for (String ChildWindow : s1) {
             if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
                 driver.switchTo().window(ChildWindow);
                 driver.close();
@@ -92,10 +88,8 @@ public class MultipleWindowsThings {
         driver.findElement(By.id("windowButton")).click();
         String mainWindow = driver.getWindowHandle();
         Set<String> s1 = driver.getWindowHandles();
-        Iterator<String> i1 = s1.iterator();
 
-        while (i1.hasNext()) {
-            String ChildWindow = i1.next();
+        for (String ChildWindow : s1) {
             if (!mainWindow.equalsIgnoreCase(ChildWindow)) {
                 driver.switchTo().window(ChildWindow);
                 WebElement text = driver.findElement(By.id("sampleHeading"));

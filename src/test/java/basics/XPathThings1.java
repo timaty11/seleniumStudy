@@ -48,10 +48,7 @@ public class XPathThings1 {
             System.out.println(" The label is : " + e.getText());
         }
 
-        /*
-         * Opening web table page
-         */
-
+        // Opening web table page
         driver.get("https://www.demoqa.com/webtables");
 
         // Get the last node - Last val in table
