@@ -1,8 +1,7 @@
-package frameworksDesign.pomThings.testCases;
+package advanced.pomThings.testCases;
 
-import frameworksDesign.pomThings.pages.DashBoard;
-import frameworksDesign.pomThings.pages.HomePage;
-import frameworksDesign.pomThings.pages.LoginPage;
+import advanced.pomThings.pages.DashBoard;
+import advanced.pomThings.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 

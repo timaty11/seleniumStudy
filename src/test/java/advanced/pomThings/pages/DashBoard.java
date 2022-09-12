@@ -1,4 +1,4 @@
-package frameworksDesign.pomThings.pages;
+package advanced.pomThings.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
